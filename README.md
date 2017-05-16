@@ -24,6 +24,14 @@ It also contains a few boilerplate files needed to get started on Heroku:
 
 ## Interesting readings related to the Los Angeles Riots
 
+- [1992 Los Angeles riots](https://en.wikipedia.org/wiki/1992_Los_Angeles_riots)
+  
+  Widespread looting, assault, arson, and killings occurred during the riots, and estimates of property damage were over $1 billion. Order was only restored after members of the California Army National Guard, the 7th Infantry Division, and the 1st Marine Division were called in to stop the rioting when local police could not control the situation. In total, 58 people were killed during the riots, more than 2,000 people were injured, and more than 11,000 were arrested. LAPD chief of police Daryl Gates, who had already announced his resignation by the time of the riots, took much of the institutional blame.
+
+
+
+
+- [L.A. riots by the numbers](http://www.latimes.com/local/1992riots/la-me-riots-25-years-20170420-htmlstory.html)
 - [Youngest victim of the LA Riots: Baby born with bullet wound]
 (http://www.foxla.com/news/local-news/249152966-story)
 - [For 22 murder victims, LA Riots leave legacy of justice eluded](http://www.foxnews.com/us/2012/04/29/for-22-murder-victims-la-riots-leave-legacy-justice-eluded.html)
