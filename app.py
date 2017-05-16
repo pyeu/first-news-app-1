@@ -10,8 +10,7 @@ https://github.com/ireapps/first-news-app/blob/436ab704bcb6a9e506846f2113e29b721
 from flask import Flask
 from flask import render_template
 from foo.datahelper import get_la_riot_deaths
-# The os module is needed for the Heroku port
-import os
+
 
 myapp = Flask(__name__)
 
@@ -43,12 +42,4 @@ def incident(id):
     return 'Sorry, {id} does not exist as an id in our incident data'.format(id=id)
 
 if __name__ == '__main__':
-
-    # this line handles the situation of the app living on
-    # heroku and thus needing to use a port number that is not 5000
-    # http://virantha.com/2013/11/14/starting-a-simple-flask-app-with-heroku/
-    portnum = int(os.environ.get("PORT") or 5000)
-
-    # and this is the standard line to get the app running
-    myapp.run(host='0.0.0.0', debug=True,
-              use_reloader=True, port=portnum)
+    myapp.run( debug=True, use_reloader=True)

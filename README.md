@@ -53,6 +53,8 @@ It also contains a few boilerplate files needed to get started on Heroku:
 - [For 7 years, L.A. Times’ Homicide Report has wrested stories from grim data](https://www.poynter.org/2014/since-2007-l-a-times-homicide-report-has-wrested-stories-from-data/240349/)
 - [10-Year-Old Shames the Globe into Updating Its Database of Murder Victims](http://www.bostonmagazine.com/news/blog/2015/01/09/10-year-old-shames-boston-globe-updating-database-murder-victims/)
 
+http://www.nytimes.com/1992/05/17/us/after-the-riots-of-58-riot-deaths-50-have-been-ruled-homicides.html
+
 ### Other homicide databases
 
 - https://projects.jsonline.com/apps/Milwaukee-Homicide-Database/
