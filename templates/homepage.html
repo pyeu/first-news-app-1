@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First News App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+    <h1>First News App: Los Angeles Riot Deaths</h1>
+
+    <div class="byline">
+        Inspired by the <a href="http://first-news-app.readthedocs.org/">The First News App Tutorial</a>
+    </div>
+
+    <p>
+        Here are the <strong>60</strong> people who died during the
+        <a href="http://www.latimes.com/projects/la-me-riots-25-years/">1992 Los Angeles Riots</a>
+    </p>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Race</th>
+        </tr>
+    {% for obj in incidents %}
+        <tr>
+            <td><a href="/incidents/{{ obj.id }}">{{ obj.full_name }}</a></td>
+            <td>{{ obj.date }}</td>
+            <td>{{ obj.type }}</td>
+            <td>{{ obj.address }}</td>
+            <td>{{ obj.age }}</td>
+            <td>{{ obj.gender }}</td>
+            <td>{{ obj.race }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+
+    <h2>Unsolved deaths</h2>
+    <p>
+        In 2017, the <a href="http://www.latimes.com/entertainment/arts/miranda/la-et-cam-la-riots-jeff-beall-los-angeles-uprising-20170427-htmlstory.html">Los Angeles Times reported</a>
+        that <strong>23</strong>
+        deaths remain unsolved.
+    </p>
+
+
+    <footer>
+        <h3>Credits</h3>
+        <p>
+
+            <a href="http://first-news-app.readthedocs.io/en/latest/">The First News App Tutorial </a>
+
+            was created and is maintained by
+            <a href="http://www.ire.org/">Investigative Reporters and Editors</a>
+            <a href="http://data.nicar.org/">National Institute for Computer Assisted Reporting</a>, and
+            <a href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a>
+        </p>
+        <p>
+            The data is repurposed from a 2012 Los Angeles Times
+            <a href="http://spreadsheets.latimes.com/la-riots-deaths/">interactive news application, <em>Deaths during the L.A. riots</em></a>
+        </p>
+
+
+        <p>The code from the IRE/NICAR First News App tutorial was edited and modified to be a general Flask tutorial for the Stanford Computational Journalism Class by Dan Nguyen.</p>
+    </footer>
+
+</body>
+</html>

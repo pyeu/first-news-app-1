@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{ incident.full_name }}</title>
+</head>
+<body>
+    <p>
+        {{ incident.full_name }},
+        a {{ incident.age }}-year-old,
+        {{ incident.race|lower }}
+        {{ incident.gender|lower }}
+        died on {{ incident.date }}
+        in a {{ incident.type|lower }}
+        at {{ incident.address }} in
+        {{ incident.neighborhood }}.
+    </p>
+</body>
+</html>

@@ -1,34 +1,35 @@
-import csv
 from flask import Flask
-from flask import abort
 from flask import render_template
-app = Flask(__name__)
+from foo.datahelper import get_la_riot_deaths
 
+myapp = Flask(__name__)
 
-def get_csv():
-    csv_path = './static/la-riots-deaths.csv'
-    csv_file = open(csv_path, 'r')
-    csv_obj = csv.DictReader(csv_file)
-    csv_list = list(csv_obj)
-    return csv_list
+### Some test routes
+@myapp.route('/hello')
+def hello():
+    # html is just text; so are jinja/HTML templates, ultimately
+    return 'Hello, world!'
 
+@myapp.route("/test")
+def test():
+    return render_template('test.html')
 
-@app.route("/")
-def index():
-    template = 'index.html'
-    object_list = get_csv()
-    return render_template(template, object_list=object_list)
+### Now, the real routes
+@myapp.route("/")
+def homepage():
+    incidents = get_la_riot_deaths()
+    return render_template('homepage.html', incidents=incidents)
 
+@myapp.route('/incidents/<id>/')
+def incident(id):
+    for d in get_la_riot_deaths():
+        if d['id'] == id:
+            return render_template('incident.html', incident=d)
 
-@app.route('/<row_id>/')
-def detail(row_id):
-    template = 'detail.html'
-    object_list = get_csv()
-    for row in object_list:
-        if row['id'] == row_id:
-            return render_template(template, object=row)
-    abort(404)
-
+    # if we get here, that means the `id` argument
+    # doesn't have a corresponding row id...so, we print
+    # a sorry message for now
+    return 'Sorry, {id} does not exist as an id in our incident data'.format(id=id)
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
+    myapp.run(debug=True, use_reloader=True)
