@@ -1,9 +1,17 @@
+"""
+Compare this with the app.py found in the
+finished, original first-news-app repo:
+
+http://first-news-app.readthedocs.io/en/latest/#act-2-hello-flask
+
+https://github.com/ireapps/first-news-app/blob/436ab704bcb6a9e506846f2113e29b7211edb407/app.py
+"""
+
 from flask import Flask
 from flask import render_template
 from foo.datahelper import get_la_riot_deaths
-import os # needed for the Heroku port config step...
-
-
+# The os module is needed for the Heroku port
+import os
 
 myapp = Flask(__name__)
 
@@ -15,7 +23,7 @@ def hello():
 
 @myapp.route("/test")
 def test():
-    return render_template('test.html')
+    return render_template('tet.html')
 
 ### Now, the real routes
 @myapp.route("/")
