@@ -32,4 +32,12 @@ def incident(id):
     return 'Sorry, {id} does not exist as an id in our incident data'.format(id=id)
 
 if __name__ == '__main__':
-    myapp.run(debug=True, use_reloader=True)
+
+    # this line handles the situation of the app living on
+    # heroku and thus needing to use a port number that is not 5000
+    # http://virantha.com/2013/11/14/starting-a-simple-flask-app-with-heroku/
+    portnum = os.environ.get("PORT") or 5000
+
+    # and this is the standard line to get the app running
+    myapp.run(host='0.0.0.0', debug=True,
+              use_reloader=True, port=portnum)
