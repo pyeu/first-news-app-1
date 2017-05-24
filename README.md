@@ -21,6 +21,48 @@ It also contains a few boilerplate files needed to get started on Heroku:
 - Have an account on Heroku.
 
 
+# Getting started
+
+**Fork** this repo to your Github account: https://github.com/stanfordjournalism/first-news-app
+
+You should basically have created a new repo called:
+
+https://github.com/your_username/first-news-app
+
+
+Then **clone** this repo with **SSH** using your system's command-line:
+
+```sh
+$ git clone git@github.com:YOUR_USERNAME/first-news-app.git
+```
+
+## Get it running
+
+When you run the `git clone` command, the repo is downloaded as a subfolder relative to your current working directory.
+
+To *change* into the directory:
+
+```sh
+$ cd first-news-app
+```
+
+If Python 3 is installed, along with Flask, and everything else:
+
+```sh
+$ python app.py
+```
+
+Further reading about Flask can be found here: http://www.compjour.org/lessons/flask-single-page/hello-tiny-flask-app/
+
+
+
+
+
+
+
+
+
+# Background material regarding L.A. riots
 
 ## Interesting readings related to the Los Angeles Riots
 

@@ -25,11 +25,26 @@ def test():
     return render_template('tet.html')
 
 ### Now, the real routes
+# the homepage/wide view
 @myapp.route("/")
 def homepage():
     incidents = get_la_riot_deaths()
     return render_template('homepage.html', incidents=incidents)
 
+# almost the same as the homepage...
+@myapp.route("/race/<racename>")
+def byrace(racename):
+    rname = racename.lower()
+    rincidents = []
+    all_incidents = get_la_riot_deaths()
+    for i in all_incidents:
+        if i['race'].lower() == rname:
+            rincidents.append(i)
+
+    return render_template('race.html', incidents=rincidents, racename=racename)
+
+
+# the incident-level view
 @myapp.route('/incidents/<id>/')
 def incident(id):
     for d in get_la_riot_deaths():

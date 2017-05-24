@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{racename}} deaths |  First News App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+    <h1>First News App: Los Angeles Riot Deaths ({{racename}})</h1>
+
+    <div class="byline">
+        Inspired by the <a href="http://first-news-app.readthedocs.org/">The First News App Tutorial</a>
+    </div>
+
+    <p>
+        Here are the <strong>{{ incidents | length }}</strong>  {{racename}} people who died during the
+        <a href="http://www.latimes.com/projects/la-me-riots-25-years/">1992 Los Angeles Riots</a>
+    </p>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Race</th>
+        </tr>
+    {% for obj in incidents %}
+        <tr>
+            <td><a href="/incidents/{{ obj.id }}">{{ obj.full_name }}</a></td>
+            <td>{{ obj.date }}</td>
+            <td>{{ obj.type }}</td>
+            <td>{{ obj.address }}</td>
+            <td>{{ obj.age }}</td>
+            <td>{{ obj.gender }}</td>
+            <td>{{ obj.race }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+
+</body>
+</html>
